@@ -11,13 +11,13 @@ const maxItem = {
   durability: 100,
   enhancement: 20,
 };
-const enhancementTestFourteen = {
+const testFourteen = {
   name: "",
   durability: 50,
   enhancement: 14,
 };
 
-const enhancementTestSixteen = {
+const testSixteen = {
   name: "",
   durability: 50,
   enhancement: 16,
@@ -30,7 +30,7 @@ it("run test", function () {
 
 describe("enhancer.js", function () {
 
-	//New item will have durability at 100
+	//-----------------
   describe("repair()", function () {
 
     it("should accept an item, return a new item 100 durability", function () {
@@ -39,7 +39,8 @@ describe("enhancer.js", function () {
     });
 
   });
-
+  
+  //-----------------
   describe("succeed()", function () {
 
     it("increment it's enhancement by one when picked up", function () {
@@ -54,6 +55,7 @@ describe("enhancer.js", function () {
 
   });
 
+  //-----------------
   describe("fail()", function () {
 
     it("should subtract 10 from durability and 1 from enhancement if enhancement level > 17", function () {
@@ -63,15 +65,15 @@ describe("enhancer.js", function () {
     });
 
     it("should subtract 5 from durability if enhancement level is less than 15", function () {
-      fail(enhancementTestFourteen);
-      expect(enhancementTestFourteen.durability).toBe(45);
+      fail(testFourteen);
+      expect(testFourteen.durability).toBe(45);
     });
 
 
     it("should subtract 10 from durability if enhancement level is > 15 and < 17, enhancement should be unchanged", function () {
-      fail(enhancementTestSixteen);
-      expect(enhancementTestSixteen.durability).toBe(40);
-      expect(enhancementTestSixteen.enhancement).toBe(16);
+      fail(testSixteen);
+      expect(testSixteen.durability).toBe(40);
+      expect(testSixteen.enhancement).toBe(16);
     });
     
   });
